@@ -1,0 +1,66 @@
+<!-- ![Image Alt Text](/path/to/image.png)
+
+[Link to interactive graph](https://link.to/interactive/graph) -->
+<h1 id="table-of-contents" tabindex="-1">Table of Contents</h1>
+<ul>
+<li><a href="#part-1-the-mma-meta">Part 1: The MMA Meta</a>
+<ul>
+<li><a href="#has-the-meta-changed">Has the meta changed?</a></li>
+<li><a href="#standing-game">Standing Game</a>
+<ul>
+<li><a href="#striking-nuances">Striking Nuances</a>
+<ul>
+<li><a href="#distance">Distance</a></li>
+<li><a href="#target">Target</a></li>
+<li><a href="#significance">Significance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ground-game">Ground Game</a></li>
+<li><a href="#how-did-this-affect-match-characteristics">How did this affect match characteristics?</a></li>
+</ul>
+</li>
+<li><a href="#part-2-predicting-winners">Part 2: Predicting Winners</a>
+<ul>
+<li><a href="#preparing-dataset">Preparing Dataset</a></li>
+<li><a href="#train">Train</a></li>
+<li><a href="#feature-selection">Feature Selection</a></li>
+<li><a href="#simplified-betting">Simplified Betting</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="part-1%3A-the-mma-meta" tabindex="-1">Part 1: The MMA Meta</h1>
+<p>MMA (Mixed Martial Arts) is a combat sport which allows most forms of attacks: punches, kicks, knees, elbows, takedowns, chokes, locks. It has thus earned a unique reputation amongst combat sport as an evolving melting pot of martial arts; what sticks and what doesn't?<br>
+Meta is short for &quot;metagame,&quot; which refers to the strategies, tactics, and dominant playstyles that emerge within a competitive gaming environment<br>
+So, how has the meta of MMA evolved over the decades? &quot;Meta&quot; is shorthand for the &quot;metagame&quot;, which refers to the current strategic methods and dominant playstyles. We base our analysis on a dataset of <a href="https://www.kaggle.com/datasets/danmcinerney/mma-differentials-and-elo">UFC matches</a>, the sport's most popular promotion company.</p>
+<h2 id="has-the-meta-changed%3F" tabindex="-1">Has the meta changed?</h2>
+<p>Before digging into specifics, let's check if the meta has actually broadly evolved over time. Through Primary Components Analysis (PCA), we perform dimension reduction to visualise the data through 3 primary components, i.e. the 3 directions of highest variance.</p>
+<!-- Plotly figure embed here -->
+<p>Older matches appear broadly more distant to newer matches, which indicates a change in the meta. Let's reduce primary components further to 2, then to 1.</p>
+<!-- Plotly figure embed here -->
+<p>For PC1 especifically, there is a clear trend of match characteristics diverging over the years.<br>
+Let's dig into the data to find out what has changed.</p>
+<h2 id="standing-game" tabindex="-1">Standing Game</h2>
+<p>Broadly, MMA can be divided into the standing game and the grounded game. Both are almost different disciplines, requiring different skillsets and strategies. Some fighters might be better at one than the other.</p>
+<p>We start with the standing game, who's attacks can be divided into striking and takedowns (if landed, the fight transitions to the ground game). How has the proportions of these two kind of attacks evolved over time?</p>
+<!-- Plotly figure embed here -->
+<h3 id="striking-nuances" tabindex="-1">Striking Nuances</h3>
+<h4 id="distance" tabindex="-1">Distance</h4>
+<!-- Plotly figure embed here -->
+<h4 id="target" tabindex="-1">Target</h4>
+<!-- Plotly figure embed here -->
+<h4 id="significance" tabindex="-1">Significance</h4>
+<!-- Plotly figure embed here -->
+<h2 id="ground-game" tabindex="-1">Ground Game</h2>
+<!-- Plotly figure embed here -->
+<h2 id="how-did-this-affect-match-characteristics%3F" tabindex="-1">How did this affect match characteristics?</h2>
+<!-- Plotly figure embed here -->
+<h1 id="part-2%3A-predicting-winners" tabindex="-1">Part 2: Predicting Winners</h1>
+<h2 id="preparing-dataset" tabindex="-1">Preparing Dataset</h2>
+<!-- Plotly figure embed here -->
+<h2 id="train" tabindex="-1">Train</h2>
+<!-- Plotly figure embed here -->
+<h2 id="feature-selection" tabindex="-1">Feature Selection</h2>
+<!-- Plotly figure embed here -->
+<h2 id="simplified-betting" tabindex="-1">Simplified Betting</h2>
