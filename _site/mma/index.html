@@ -1,7 +1,10 @@
-<!-- ![Image Alt Text](/path/to/image.png)
-
-[Link to interactive graph](https://link.to/interactive/graph) -->
-<h1 id="table-of-contents" tabindex="-1">Table of Contents</h1>
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1 id="table-of-contents" tabindex="-1">Table of Contents</h1>
 <ul>
 <li><a href="#part-1-the-mma-meta">Part 1: The MMA Meta</a>
 <ul>
@@ -32,13 +35,16 @@
 </ul>
 <h1 id="part-1%3A-the-mma-meta" tabindex="-1">Part 1: The MMA Meta</h1>
 <p>MMA (Mixed Martial Arts) is a combat sport which allows most forms of attacks: punches, kicks, knees, elbows, takedowns, chokes, locks. It has thus earned a unique reputation amongst combat sport as an evolving melting pot of martial arts; what sticks and what doesn't?<br>
-Meta is short for &quot;metagame,&quot; which refers to the strategies, tactics, and dominant playstyles that emerge within a competitive gaming environment<br>
-So, how has the meta of MMA evolved over the decades? &quot;Meta&quot; is shorthand for the &quot;metagame&quot;, which refers to the current strategic methods and dominant playstyles. We base our analysis on a dataset of <a href="https://www.kaggle.com/datasets/danmcinerney/mma-differentials-and-elo">UFC matches</a>, the sport's most popular promotion company.</p>
+Meta is short for &quot;metagame,&quot; which refers to the strategies, tactics, and dominant playstyles that emerge within a competitive gaming environment</p>
+<p>So, how has the meta of MMA evolved over the decades? &quot;Meta&quot; is shorthand for the &quot;metagame&quot;, which refers to the current strategic methods and dominant playstyles. We base our analysis on a dataset of <a href="https://www.kaggle.com/datasets/danmcinerney/mma-differentials-and-elo">UFC matches</a>, the sport's most popular promotion company.</p>
+<p>All graphs are interactive by clicking on them.</p>
 <h2 id="has-the-meta-changed%3F" tabindex="-1">Has the meta changed?</h2>
 <p>Before digging into specifics, let's check if the meta has actually broadly evolved over time. Through Primary Components Analysis (PCA), we perform dimension reduction to visualise the data through 3 primary components, i.e. the 3 directions of highest variance.</p>
-<!-- Plotly figure embed here -->
+<!-- ![Image Alt Text](/path/to/image.png)
+[Link to interactive graph](https://link.to/interactive/graph) -->
 <p>Older matches appear broadly more distant to newer matches, which indicates a change in the meta. Let's reduce primary components further to 2, then to 1.</p>
-<!-- Plotly figure embed here -->
+<!-- ![Image Alt Text](/path/to/image.png)
+[Link to interactive graph](https://link.to/interactive/graph) -->
 <p>For PC1 especifically, there is a clear trend of match characteristics diverging over the years.<br>
 Let's dig into the data to find out what has changed.</p>
 <h2 id="standing-game" tabindex="-1">Standing Game</h2>
@@ -64,3 +70,6 @@ Let's dig into the data to find out what has changed.</p>
 <h2 id="feature-selection" tabindex="-1">Feature Selection</h2>
 <!-- Plotly figure embed here -->
 <h2 id="simplified-betting" tabindex="-1">Simplified Betting</h2>
+
+</body>
+</html>

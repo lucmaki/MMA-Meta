@@ -1,10 +1,7 @@
 ---
 title: MMA Meta
+layout: base.njk
 ---
-<!-- ![Image Alt Text](/path/to/image.png)
-
-[Link to interactive graph](https://link.to/interactive/graph) -->
-
 # Table of Contents
 
 - [Part 1: The MMA Meta](#part-1-the-mma-meta)
@@ -25,14 +22,18 @@ title: MMA Meta
 # Part 1: The MMA Meta
 MMA (Mixed Martial Arts) is a combat sport which allows most forms of attacks: punches, kicks, knees, elbows, takedowns, chokes, locks. It has thus earned a unique reputation amongst combat sport as an evolving melting pot of martial arts; what sticks and what doesn't? 
 Meta is short for "metagame," which refers to the strategies, tactics, and dominant playstyles that emerge within a competitive gaming environment
+
 So, how has the meta of MMA evolved over the decades? "Meta" is shorthand for the "metagame", which refers to the current strategic methods and dominant playstyles. We base our analysis on a dataset of [UFC matches](https://www.kaggle.com/datasets/danmcinerney/mma-differentials-and-elo), the sport's most popular promotion company.
+
+All graphs are interactive by clicking on them.
 
 ## Has the meta changed?
 Before digging into specifics, let's check if the meta has actually broadly evolved over time. Through Primary Components Analysis (PCA), we perform dimension reduction to visualise the data through 3 primary components, i.e. the 3 directions of highest variance.
-
-<!-- Plotly figure embed here -->
+<!-- ![Image Alt Text](/path/to/image.png)
+[Link to interactive graph](https://link.to/interactive/graph) -->
 Older matches appear broadly more distant to newer matches, which indicates a change in the meta. Let's reduce primary components further to 2, then to 1. 
-<!-- Plotly figure embed here -->
+<!-- ![Image Alt Text](/path/to/image.png)
+[Link to interactive graph](https://link.to/interactive/graph) -->
 For PC1 especifically, there is a clear trend of match characteristics diverging over the years. 
 Let's dig into the data to find out what has changed.
 
