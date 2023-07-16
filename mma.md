@@ -29,7 +29,7 @@ All graphs are interactive by clicking on them.
 
 ## Has the meta changed?
 Before digging into specifics, let's check if the meta has actually broadly evolved over time. Through Primary Components Analysis (PCA), we perform dimension reduction to visualise the data through 3 primary components, i.e. the 3 directions of highest variance.
-{% include "graphs/pca_scatter_3d.html" %}
+{% include "graphs/pca_3d.html" %}
 Older matches appear broadly more distant to newer matches, which indicates a change in the meta. Let's reduce primary components further to 2, then to 1. 
 
 <img src="/imgs/pca_2d.png">
