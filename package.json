@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@11ty/eleventy-img": "^3.1.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.7"
   }

@@ -9,4 +9,5 @@ module.exports = function(eleventyConfig) {
   }).use(markdownItAnchor);
 
   eleventyConfig.setLibrary("md", markdownLibrary);
+  eleventyConfig.addPassthroughCopy("graphs");
 };
