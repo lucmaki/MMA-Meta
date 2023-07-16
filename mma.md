@@ -29,11 +29,12 @@ All graphs are interactive by clicking on them.
 
 ## Has the meta changed?
 Before digging into specifics, let's check if the meta has actually broadly evolved over time. Through Primary Components Analysis (PCA), we perform dimension reduction to visualise the data through 3 primary components, i.e. the 3 directions of highest variance.
-<!-- ![Image Alt Text](/path/to/image.png)
-[Link to interactive graph](https://link.to/interactive/graph) -->
+{% include "graphs/interactive/pca_scatter_3d.html" %}
 Older matches appear broadly more distant to newer matches, which indicates a change in the meta. Let's reduce primary components further to 2, then to 1. 
-<!-- ![Image Alt Text](/path/to/image.png)
-[Link to interactive graph](https://link.to/interactive/graph) -->
+
+![Image Alt Text](https./graphs/imgs/pca_scatter_2d.png)
+
+
 For PC1 especifically, there is a clear trend of match characteristics diverging over the years. 
 Let's dig into the data to find out what has changed.
 
