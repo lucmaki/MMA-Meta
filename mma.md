@@ -27,7 +27,9 @@ So, how has the meta of MMA evolved over the decades? "Meta" is shorthand for th
 
 Afterwards, we train a predictive model on all these match statistics, that guesses the winner of a match based on the past historical fight data of its two combatants.
 
-Note: Graphs are clickable to open interactive versions.
+Notes: 
+- Graphs are clickable to open interactive versions.
+- Given the blog is already long enough, we exclude variance in analyses of yearly averages. 
 
 # Part 1: The MMA Meta
 
