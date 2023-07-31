@@ -38,37 +38,39 @@ Before digging into specifics, let's check whether the meta has broadly changed 
 {% include "graphs/pca_3d.html" %}
 Older matches appear broadly more distant to newer matches, which indicates an evolution of the meta. 
 
-Though, it is somewhat hard to see... so, let's drop primary components, one at a time. Given PCs are ordered based on highest variance, this essentially means honing in on that variance.  
-
-<a href="#" onclick="window.open('/graphs/pca_2d.html', 'newwindow'); return false;"><img src="/imgs/pca_2d.png"></a>
+Though, it is somewhat hard to see... so, let's just look at PC1, i.e. the main source of variance.  
 
 <a href="#" onclick="window.open('/graphs/pca_1d.html', 'newwindow'); return false;"><img src="/imgs/pca_1d.png"></a>
 
-From the main primary component (PC1), there is a clear trend of match characteristics diverging towards a certain direction over the years, but also broadening. 
+There is a trend of match characteristics diverging towards a certain direction over the years, and higher variance from increasing UFC matches over time.
 
 Let's dig into the data to find out what has changed.
 
 ## Standing Game
-Broadly, MMA can be divided into the standing game and the game while on the ground. We start with the standing game, who's attacks can be categorized as strikes and takedowns. How have their average yearly frequencies evolved over time?
+Broadly, MMA can be divided into the standing game and ground game; fighting standing and fighting after a takedown/knockdown. We start with the standing game, who's attacks can be categorized as strikes and takedowns. How have their average yearly frequencies evolved over time?
 
 <a href="#" onclick="window.open('/graphs/strikes_per_min_over_time.html', 'newwindow'); return false;"><img src="/imgs/strikes_per_min_over_time.png"></a>
 
-Strike attempts have become more and more frequent. However, their accuracy have decreased greatly, until 2010 where it stabilized to around 52%, but has started seeing a spike increase above 55% for the last 3 years. 
+Strike attempts have become more and more frequent, from a yearly average of around 6 in 2000, to 11 in 2022.
 
-Overall, a volume-centric strike strategy, with a cost in accuracy that is improving. 
+On the other hand, their accuracy have decreased greatly from its peak of 75% in 2001, stabilizing to around 52% from 2010 until 2020. However, it has started seeing a spike increase above 55% since 2020.
+
+This paints the picture of a volume-centric strike strategy, with a cost in accuracy; a cost which is seeing signs of decreasing. 
 
 What about takedowns?
 
 <a href="#" onclick="window.open('/graphs/tkd_per_min_over_time.html', 'newwindow'); return false;"><img src="/imgs/tkd_per_min_over_time.png"></a>
 
-On the other hand, takedown attempts and their accuracy have decreased, albeit with a much more noisy trend (likely due to much lower count per match compared to strikes, i.e. higher variance). Accuracy has stabilized around 37% in the past decade. This indicates that the meta surrounding the execusion of (and/or defense against) takedowns has stabilized, but not the opportunities/choice of when to use them. However, we mote that both attempts and accuracy had a noticable increase in the last year. 
+Takedown attempts and accuracy have stabilized at a lower point over time. We note that both attempts and accuracy had a major uptick in the last year, 2022. Both trends' noisy starts comes from low takedown samples at a time where there were fewer UFC matches. 
 
-Overall, strike attempts are more than an order of magnitude more frequent than takedown attempts, and that difference has only grown over time. So, generally speaking, striking dominates the standing game. 
+The trends of takedown attempts can be seperated into three groups: high variance oscilation between 0.25-0.39 attempts per minute between 2000-2010, which settled into a stable 0.29-0.30 between 2010-2014. Then a valley of 0.24-0.28 between 2015-2022.
 
-However, takedowns are pivotal attacks if landed, that transition the fight to the ground. As such, their accuracy not being too lower than strikes means that their constant threat remain forms an important part of the standing game.
+Simiarly, accuracy saw a noisy start of range 27%-56% between 2000-2005, into a generally decreasing trend of range 55%-34% between 2005-2011, so as to reach a somewhat stable range of 34%-40% between 2011-2022.
+
+Overall, to compare strikes and takedowns: strike attempts are more than an order of magnitude more frequent than takedown attempts, and that difference has only grown over time. So, generally speaking, striking dominates the standing game.However, takedowns are pivotal attacks if landed, transitioning the fight to the ground. Given their accuracy is not that much lower than those of strikes, their infrequency must not be mistaken for ineffectiveness.
 
 ### Nuances of Striking
-There is much more complexity to strikes than volume and accuracy, and given their dominance over the standing game, understanding their nuance provides insight over the standing game meta.
+There is much more complexity to strikes than volume and accuracy, and given their dominance over the standing game, it is important to delve into their details to understand the standing game meta.
 
 To dive deeper into their development over time, let's look at changes in their various characteristics.
 
@@ -77,35 +79,42 @@ In strike-oriented martial arts, there is a distinction made between infighters 
 
 <a href="#" onclick="window.open('/graphs/proportions_strike_distance_over_time.html', 'newwindow'); return false;"><img src="/imgs/proportions_strike_distance_over_time.png"></a>
 
-Over the decades, there has been a fairly steady trend towards striking from a distance over strikes at clinch distance. In other words, the striking meta has progressed towards outfighting. This ties with the inhibited ability to attempt takedowns, given it's generally performed at close range.
+Over the decades, there has been a fairly steady trend towards striking from a distance over strikes at clinch distance. In other words, the striking meta has progressed towards outfighting. This ties with the inhibited ability to attempt takedowns; generally requiring to be at close range.
 
 <a href="#" onclick="window.open('/graphs/strike_acc_by_distance_over_time.html', 'newwindow'); return false;"><img src="/imgs/strike_acc_by_distance_over_time.png"></a>
 
-Strike accuracy at both distances have been on a slight upward trajectory for the last decade. Clinch strikes have always been much more accurate than distance strikes, which is intuitively unsurprising; farther attack means easier to avoid.
+Strike accuracy at both distances have been on a slight upward trajectory for the last decade. Clinch strikes have always been much more accurate than distance strikes, which makes sense intuitively; farther attacks would be easier to avoid.
 
 #### Target
 What about where strikes are aimed? Which body parts between head, body and legs?
 
 <a href="#" onclick="window.open('/graphs/proportions_strike_target_over_time.html', 'newwindow'); return false;"><img src="/imgs/proportions_strike_target_over_time.png"></a>
 
-Unsurprisingly, aiming for the head has always been overwhelmingly the favored target, sitting fairly steadily around 80%. Leg kicks have plateaud, while having had a period of popularity between 2000 and 2005. Meanwhile, body blows ever so slowly increased in frequency over time.
+Unsurprisingly, aiming for the head has always been overwhelmingly the favored target, sitting fairly steadily around 80%. Leg kicks have plateaud, despite a period of popularity between 2000 and 2005. Meanwhile, body blows ever so slowly increased in frequency over time.
 
 <a href="#" onclick="window.open('/graphs/strike_acc_by_target_over_time.html', 'newwindow'); return false;"><img src="/imgs/strike_acc_by_target_over_time.png"></a>
 
-All target strike accuracies trended downward past 2001, until past 2010 (2015 for body strikes), where they've started slowly improving over time. Past 2020, all target accuracies saw a sudden noticable increase.
+For all targets, accuracies has trended downward passed 2001, until around 2010 where they've started slowly improving over time (2015 for body strikes). After 2020, all target accuracies saw a sudden noticable increase.
 
-Strike targets that are more frequently aimed at are the least accurate. An intuition for this is that the more situational the attack, the more certain landing it is when the opportunity does appear. As opposed to, say, the common jab to the head, which is so common because it's an opening move; a pawn meant to create opportunities.
+There is an inverse correlation between strike target frequency and its accuracy; targets that are more frequently aimed at are the least accurate. An intuition for this is that the more situational the attack, the more certain landing it is when the opportunity to aim for it does appear. For example, a low kick being difficult to avoid but requiring more commitment and thus risk to be thrown, when compared to a jab to the head, which is popular for its low commitment and low risk, despite low accuracy.
 
 
 #### Significance
 
+There is one more way to categorize strikes; by their significance. In other words, strikes that could seriously damage if landed, versus those that were thrown without that intent.
+
 <a href="#" onclick="window.open('/graphs/proportions_strike_sig_over_time.html', 'newwindow'); return false;"><img src="/imgs/proportions_strike_sig_over_time.png"></a>
 
-Interestingly, one might think that a focus on outfighting means 
+Over time, the meta is developing around attempts at decisive blows; from 49% in the 2000, to 63% in 2022. This growth has plateaud.
+
+I assumed the focus on outfighting would lead to more minimal strikes, but it ended up the other way around. This indicates that the outfighting meta is an aggressive kind, which ties to the earlier insight about overall strike frequency having increased.
 
 <a href="#" onclick="window.open('/graphs/strike_acc_by_sig_over_time.html', 'newwindow'); return false;"><img src="/imgs/strike_acc_by_sig_over_time.png"></a>
 
-<!-- Plotly figure embed here -->
+Since 2009, significant strikes have become more accurate over time (from 39% to 48%), Meanwhile, minimal strikes have grown a little less accurate over time, from 93% to 88% since 2000.
+
+Despite that, minimal strikes remain overwhelmingly more accurate than significant blows. This is because minimal strikes have lower bodily commitment; prioritizing increasing speed and lowering tells, over power. Such as is the case with jabs compared to crosses; the faster lead hand versus the stronger read hand.
+
 
 ## Ground Game
 <!-- Plotly figure embed here -->
