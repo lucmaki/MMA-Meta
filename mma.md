@@ -188,30 +188,40 @@ What architecture should we select for this binary classification task? Some ini
 
 Now that we've selected a model, we perform hyperparameter tuning, a.k.a trying a bunch of setting configurations to train the best XGBoost model. We do this through grid search, basically trying all combination of settings. It's not a problem given this model trains pretty fast. Ultimately, the best model we find gives evaluations of:
 
-<a href="#"><img src="/imgs/eval_grid_search.png"></a>
+<a href="#training"><img src="/imgs/eval_grid_search.png"></a>
 
 Keep in mind, accuracy is rarely a useful evaluation metric. For this example, we favored precision; imagining the use-case of a safe betting model that only bets when it is confident in success.
 
 ## Feature Selection
 
-The dataset has hundreds of features! This is often detrimental, lowering scores and increasing complexity for many features which the model might not even use at all. We need to find the most important features to keep.
+We've trained the model on the dataset's hundreds of features. This is often detrimental; lowering scores and increasing compute for many features which might be useless. Let's find the most important features to keep.
 
 <a href="#" onclick="window.open('/graphs/top_features_ANOVA_f.html', 'newwindow'); return false;"><img src="/imgs/top_features_ANOVA_f.png"></a>
 
-An ANOVA test is a good way to find features correlated with another. With it, we find that the most important features for winner prediction tend to be strike based; high differentials with the opponent, and ground strike metrics are especially useful.
+An ANOVA F-Score test is a common way to select features of highest correlation. Here, we find that the most important features for winner prediction tend to be strike based. Strike differential metrics and ground strike metrics are especially useful.
 
-But, like we mentionned previous, XGBoost has an innate features importance functionality, which we'll use instead of ANOVA to select the most useful features.
+But, like we mentionned previously, XGBoost has an innate functionality to compute feature importances. We'll use this instead of ANOVA to select the most useful features.
 
-We take the features importance of our current model, and we trim away the worst of them, one at a time. For each subset, we train a new model, and keep the one with highest precision evaluation scores.
+Our methodology is to take the features importance of our current model, and trim away the lowest ranked feature, one at a time. We then train a new model on each of those feature subsets, and keep the one with the highest precision evaluation score.
 
-<a href="#" onclick="window.open('/graphs/top_features_ANOVA_f.html', 'newwindow'); return false;"><img src="/imgs/top_features_ANOVA_f.png"></a>
+<a href="#" onclick="window.open('/graphs/feature_importance_and_threshold.html', 'newwindow'); return false;"><img src="/imgs/feature_importance_and_threshold.png"></a>
 
-The best model is found at a cutoff of 55 features. We find that the most important features to predict winners tend to be strike based; high accuracy differentials with the opponent, and ground strike metrics are especially useful.
+The best model is found at a cutoff of 55 features. The rest of the features will be discarded. We can check the updated feature importance graph of this model:
 
-The new model's updated feature importances look like this:
+<a href="#" onclick="window.open('/graphs/feature_importance_precision_model.html', 'newwindow'); return false;"><img src="/imgs/feature_importance_precision_model.png"></a>
 
-<a href="#" onclick="window.open('/graphs/training_set_cutoff.html', 'newwindow'); return false;"><img src="/imgs/training_set_cutoff.png"></a>
+Finally, here is an evaluation table where we compare to the model with only hyperparameter tuning:
+
+<a href="#feature-selection"><img src="/imgs/eval_feature_select.png"></a>
+
+Overall, we beat the previous model in every way through feature selection.
 
 ## Simplified Betting
 
-<!-- Plotly figure embed here -->
+As a final test, let's simulate a betting game competition between models at different stages of development, and see how much money it can make when applied to the testing set. 
+
+This is a toy evaluation, as it's missing a major component of real betting; betting odds for each fights. Here, we assume 1:1 odds, and the models bet amounts based on their confidence levels.
+
+<a href="#" onclick="window.open('/graphs/cumul_earnings_eval_bets.html', 'newwindow'); return false;"><img src="/imgs/cumul_earnings_eval_bets.png"></a>
+
+Our precision oriented model with feature selection led to an increase in earnings of around 8%, compared to only tuning hyperparameters.
