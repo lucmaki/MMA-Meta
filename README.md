@@ -1,5 +1,5 @@
 # MMA-Meta
-![mma](./readme_icon.png | width=100)
+<img src="./readme_icon.png" width="48">
 (Image credit: Midjourney)
 
 Data-oriented Storytelling about the Evolution of the MMA Meta. 
