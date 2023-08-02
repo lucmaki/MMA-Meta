@@ -5,4 +5,4 @@
 
 Data-oriented Storytelling about the Evolution of the MMA Meta. + Training a model to predict wins based on the past data of the 2 contestants.
 
-
+All code for generating figures and training are in the main notebook.
