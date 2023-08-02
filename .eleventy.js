@@ -3,6 +3,7 @@ const markdownItAnchor = require("markdown-it-anchor");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("graphs");
   eleventyConfig.addPassthroughCopy("imgs");
+  eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.setLibrary("md", markdownIt({
     html: true,
     linkify: true,
