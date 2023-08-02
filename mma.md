@@ -19,6 +19,7 @@ layout: base.njk
   - [Training](#training)
   - [Feature Selection](#feature-selection)
   - [Simplified Betting](#simplified-betting)
+- [Conclusion](#conclusion)
 
 
 # Introduction
@@ -225,3 +226,11 @@ This is a toy evaluation, as it's missing a major component of real betting; bet
 <a href="#" onclick="window.open('/graphs/cumul_earnings_eval_bets.html', 'newwindow'); return false;"><img src="/imgs/cumul_earnings_eval_bets.png"></a>
 
 Our precision oriented model with feature selection led to an increase in earnings of around 8%, compared to only tuning hyperparameters.
+
+# Conclusion
+
+We explored how the MMA meta has evolved over time. To oversimply, it has become slower paced. The standing game focusing on strike heavy outfighting, and a more defensive ground game.
+
+We can use all the fight data accumulated to predict future fights. This could be useful for fans who enjoy guessing who might win or even for real betting. It also allows us to explore the most important factor towards victory, through machine learning.
+
+There is a lot that we can't do, in part due to the limitations of the data. For one, computer vision could be used to generate time-series data on matches, rather than just aggregates. This would allow to study the meta is more detail, and for machine learning to be trained to predict winners live, with the probability changing based on what is happening in the match. From an audience perspective alone, this would be really engaging.
