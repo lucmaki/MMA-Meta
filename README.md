@@ -1,5 +1,5 @@
 # MMA-Meta
-Click [HERE]() to access the blog.
+## Click [HERE](https://mmameta.netlify.app/) to access the blog.
 
 <img src="./readme_icon.png" width="720">
 
