@@ -53,7 +53,8 @@ Before digging into specifics, let's broadly check whether the meta has changed 
 
 Through Primary Components Analysis (PCA), we perform dimension reduction to visualise the historical data of matches through 3 primary components (PC), i.e. the 3 directions of highest variance. The lighter the dot, the more recent the match.
 
-{% include "pca_3d.html" %}
+<a href="#" onclick="window.open('/graphs/pca_3d.html', 'newwindow'); return false;"><img src="/imgs/pca_3d.png"></a>
+
 Broadly, older matches appear more distant than newer matches, which indicates an evolution of the meta. 
 
 Though, it is somewhat hard to see... so, let's just look at PC1, i.e. the main source of variance.  
@@ -211,7 +212,7 @@ Keep in mind, that accuracy is rarely a useful evaluation metric. For this examp
 
 We've trained the model on the dataset's hundreds of features. This is often detrimental; lowering scores and increasing computing, all for features which might be useless. Let's find the most important features to keep.
 
-{% include "top_features_ANOVA_f.html" %}
+<a href="#" onclick="window.open('/graphs/top_features_ANOVA_f.html', 'newwindow'); return false;"><img src="/imgs/top_features_ANOVA_f.png"></a>
 
 An ANOVA F-Score test is a common way to select features of the highest correlation. Here, we find that the most important features for winner prediction tend to be strike-based. Strike differential metrics and ground strike metrics are especially useful.
 
