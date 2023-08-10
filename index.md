@@ -240,7 +240,7 @@ This is a toy evaluation, as it's missing a major component of real betting; bet
 
 <a href="#" onclick="window.open('/graphs/cumul_earnings_eval_bets.html', 'newwindow'); return false;"><img src="/imgs/cumul_earnings_eval_bets.png"></a>
 
-Our precision-oriented model with feature selection led to an increase in earnings of around 8%, compared to only tuning hyperparameters.
+Our precision-oriented model with feature selection led to an increase in earnings of around 8%, compared to only tuning hyperparameters, and is 45% more efficient than a 0-yied model that predicts randomly.
 
 # Conclusion
 
